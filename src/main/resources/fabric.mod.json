@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "mob-fight-utils",
+  "version": "${version}",
+  "name": "MobFightUtils",
+  "description": "Makes mobs more willing to fight each other.",
+  "authors": [
+    "MattiDragon"
+  ],
+  "contact": {
+    "repo": "https://github.com/mattidragon/mobfightutils"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.mattidragon.mobfightutils.MobFightUtils"
+    ]
+  },
+  "mixins": [
+    "MobFightUtils.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "fabric": "*",
+    "minecraft": "1.19.1"
+  }
+}
