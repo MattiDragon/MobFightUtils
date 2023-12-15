@@ -1,16 +1,16 @@
 plugins {
-    id 'fabric-loom' version '0.12-SNAPSHOT'
+    id 'fabric-loom' version '1.4-SNAPSHOT'
     id 'maven-publish'
 }
 
 version = project.mod_version
 group = project.maven_group
+base.archivesName = project.archives_base_name
 
 repositories {
 }
 
 dependencies {
-    // Fabric
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
@@ -27,7 +27,6 @@ processResources {
 }
 
 java {
-    archivesBaseName = project.archives_base_name
     withSourcesJar()
 }
 
@@ -37,15 +36,11 @@ jar {
     }
 }
 
-// configure the maven publication
 publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
+    publications.register("mavenJava", MavenPublication) {
+        from components.java
     }
 
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
     }
 }

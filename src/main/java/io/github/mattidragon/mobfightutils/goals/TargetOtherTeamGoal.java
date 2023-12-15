@@ -13,7 +13,7 @@ public class TargetOtherTeamGoal extends ActiveTargetGoal<LivingEntity> {
 
     @Override
     public boolean canStart() {
-        if (!mob.world.getGameRules().get(MobFightUtils.ENABLED).get())
+        if (!mob.getWorld().getGameRules().get(MobFightUtils.ENABLED).get())
             return false;
 
         if (this.mob.getScoreboardTeam() == null)

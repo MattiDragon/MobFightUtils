@@ -19,7 +19,7 @@ public class CustomRevengeGoal extends TrackTargetGoal {
 
     @Override
     public boolean canStart() {
-        if (!mob.world.getGameRules().get(MobFightUtils.ENABLED).get())
+        if (!mob.getEntityWorld().getGameRules().get(MobFightUtils.ENABLED).get())
             return false;
         if (mob.getLastAttackedTime() == this.lastAttackedTime || mob.getAttacker() == null)
             return false;
